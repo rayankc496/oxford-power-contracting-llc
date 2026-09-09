@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --color-charcoal: #333333;
+  --color-charcoal-dark: #222222;
+  --color-gold: #d4a843;
+  --color-gold-hover: #c49833;
+  --color-gray-border: #e5e7eb;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.font-heading {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.font-body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Geometric Balance theme utilities */
+.geometric-accent-bar {
+  width: 5rem;
+  height: 4px;
+  background-color: #d4a843;
+}
+
+.geometric-divider-thin {
+  height: 1px;
+  background-color: #e5e7eb;
+}
+
+.geometric-gold-line {
+  height: 1px;
+  background-color: #d4a843;
+}

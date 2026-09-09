@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Crawl Budget & Performance
+Crawl-delay: 1
+
+# Important Resource Directives
+Sitemap: https://oxford-power-contracting-llc.vercel.app/sitemap.xml
+LLM: https://oxford-power-contracting-llc.vercel.app/llms.txt
+
+# Disallow sensitive administrative or tender submission endpoints
+Disallow: /api/
+Disallow: /admin/
+Disallow: /tender-submit
+Disallow: /quote-modal

@@ -1,0 +1,44 @@
+# Oxford Power Contracting LLC (Oxford Building Contracting)
+
+Oxford Power Contracting LLC (operating as Oxford Building Contracting) is a premier general contracting company based in Sharjah, United Arab Emirates (UAE). Serving developers and private clients globally across high-spec commercial, residential, healthcare, and industrial sectors.
+
+## Core Coordinates & Identity
+- **Legal Name:** Oxford Power Contracting LLC
+- **Trade Name:** Oxford Building Contracting
+- **Tagline:** Shaping Skylines, Building Landmarks
+- **Address:** Faisal 2 Building, Office 405, King Faisal St, Al Nad - Hay Al Qasimiah, Sharjah, UAE
+- **Telephone / WhatsApp:** +971 50 418 1220 (WhatsApp Support Enabled)
+- **Primary Email:** INFO@OXFORDPWC.COM
+- **Official Website:** https://oxford-power-contracting-llc.vercel.app/
+- **Google Maps:** https://maps.app.goo.gl/eypWWP197uUBnsrm7
+- **Established Year:** 2006 (20+ Years of UAE Heritage)
+- **Status:** DEWA Registered (No: DEWA-CONTR-2008-8429), Sharjah Municipal Approved
+
+## Key Service Verticals
+- **Construction Project Management:** End-to-end turnkey FIDIC-compliant execution, municipal & Civil Defence approvals, cost control, site QA/QC.
+- **Civil Engineering:** Reinforced Concrete (RCC) structures, piling, foundation shoring, structural steel erection.
+- **MEP and Civil Integrated Solutions:** Clutter-free coordination of structural, mechanical, plumbing, and electrical works to prevent clash detection.
+- **DEWA-Certified Electrical Installations:** Low & Medium Voltage cabling, substations (11kV), transformer room civil/electrical works.
+- **HVAC & Chilled Water Systems:** Chilled water networks, VRF, duct fabrication, municipal air balancing compliance.
+- **Fire Alarm & Fire Fighting:** Addressable system installations, emergency lighting, central battery cabinets, direct Hassantuk interface.
+- **Telecommunication (Du/Etisalat):** Structured fiber networks, structured cabling, statutory NOC procurement.
+- **Architectural Fit-Out & Finishes:** High-end marble bookmatching, acoustic ceilings, porcelain cladding, luxury building envelopes.
+
+## Landmark Projects
+- **Majestic Commercial Tower (Dubai):** G+22 office tower featuring comprehensive MEP energization and complete civil structural design.
+- **Sheikh Zayed Road Residential Complex (Dubai):** Twin-tower luxury development featuring complex HVAC systems and custom substations.
+- **Sharjah Industrial Warehouse Hub:** Ultra-span steel structural design with integrated logistics layout and fire defense networks.
+- **Al Zahia Luxury Villa Enclave (Sharjah):** Premium private residence featuring bespoke marble fit-out, MEP, smart automation, and private pool.
+
+## Operational Standards & QA
+- **Zero-Incident Safety Culture:** 1.2 Million+ safe man-hours without Lost Time Injury (LTI).
+- **ISO Quality Compliance:** ISO 9001 (Quality), ISO 14001 (Environment), ISO 45001 (Health & Safety) standards.
+
+## Sitemap Structure
+- `https://oxford-power-contracting-llc.vercel.app/` - Home page, company values, core stats, and introductory highlights.
+- `https://oxford-power-contracting-llc.vercel.app/?page=about` - Company history, executive leadership, certifications, and high-trust parameters.
+- `https://oxford-power-contracting-llc.vercel.app/?page=services` - Exhaustive listing of 8 major contracting disciplines with statutory details.
+- `https://oxford-power-contracting-llc.vercel.app/?page=projects` - Comprehensive visual portfolio of landmark civil, hospitality, and residential projects.
+- `https://oxford-power-contracting-llc.vercel.app/?page=contact` - Tender submission channel, location directions, and active corporate inquiry form.
+- `https://oxford-power-contracting-llc.vercel.app/sitemap.xml` - XML sitemap.
+- `https://oxford-power-contracting-llc.vercel.app/robots.txt` - Crawler directive file.
