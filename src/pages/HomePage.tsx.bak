@@ -24,14 +24,12 @@ interface HomePageProps {
   onNavigate: (page: PageRoute) => void;
   onOpenQuoteModal: (service?: string) => void;
   onOpenLightbox: (project: ProjectItem) => void;
-  isIntroComplete: boolean;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
   onNavigate,
   onOpenQuoteModal,
   onOpenLightbox,
-  isIntroComplete,
 }) => {
   // Select 3 core contracting pillars for a clean, non-overwhelming presentation
   const pillarServices = [
@@ -116,10 +114,9 @@ export const HomePage: React.FC<HomePageProps> = ({
         <link rel="canonical" href="https://oxford-power-contracting-llc.vercel.app/" />
       </Helmet>
       {/* 1. HERO SECTION: Architectural Landmark Header with Clear CTAs */}
-      <ScrollVideoHeader
+      <ScrollVideoHeader 
         onNavigate={onNavigate}
         onOpenQuoteModal={onOpenQuoteModal}
-        isIntroComplete={isIntroComplete}
       />
 
       {/* 2. CORPORATE OVERVIEW: Spacious 2-Column Authority Briefing */}

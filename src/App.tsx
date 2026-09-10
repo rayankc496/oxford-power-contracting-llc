@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { PageRoute, ProjectItem } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -62,6 +62,10 @@ export default function App() {
     setLightboxProject(project);
   };
 
+  const handleIntroComplete = useCallback(() => {
+    setIsIntroComplete(true);
+  }, []);
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
@@ -70,6 +74,7 @@ export default function App() {
             onNavigate={navigateTo}
             onOpenQuoteModal={handleOpenQuoteModal}
             onOpenLightbox={handleOpenLightbox}
+            isIntroComplete={isIntroComplete}
           />
         );
       case 'about':
@@ -107,7 +112,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#fafafa] text-[#333333] selection:bg-[#d4a843] selection:text-white relative">
-      {!isIntroComplete && <IntroLoader onComplete={() => setIsIntroComplete(true)} />}
+      {!isIntroComplete && <IntroLoader onComplete={handleIntroComplete} />}
 
       {/* Top Navbar */}
       <Navbar

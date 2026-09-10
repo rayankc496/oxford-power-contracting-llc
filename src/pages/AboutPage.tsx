@@ -243,7 +243,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div 
+            variants={scaleUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
             {milestones.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -252,7 +258,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.15 }}
-                className="bg-white p-6 border border-gray-200 shadow-sm relative hover:border-[#d4a843] transition-colors"whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                className="bg-white p-6 border border-gray-200 shadow-sm relative hover:border-[#d4a843] transition-colors"
               >
                 <div className="font-heading text-4xl font-bold text-[#d4a843] mb-2 leading-none">
                   {item.year}
@@ -265,7 +272,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
                 </p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -290,7 +297,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div 
+          variants={scaleUpVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {CERTIFICATIONS.map((cert, index) => (
             <motion.div
               key={cert.id}
@@ -299,7 +312,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.15 }}
-              className="bg-white p-6 border border-gray-200 shadow-sm hover:border-[#d4a843] transition-all flex flex-col justify-between"whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="bg-white p-6 border border-gray-200 shadow-sm hover:border-[#d4a843] transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">
@@ -327,7 +341,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* 5. Executive Leadership & Engineering Team */}
@@ -360,7 +374,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.15 }}
-              className="bg-white border border-gray-200 shadow-sm hover:border-[#d4a843] transition-all group"whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="bg-white border border-gray-200 shadow-sm hover:border-[#d4a843] transition-all group"
             >
               <div className="relative h-64 overflow-hidden bg-zinc-900">
               <SafeImage

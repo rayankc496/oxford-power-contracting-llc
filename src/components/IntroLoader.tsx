@@ -122,7 +122,7 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
     setIsFadingOut(true);
     setTimeout(() => {
       onComplete();
-    }, 800); // matches transition-opacity duration-700
+    }, 700); // matches transition-opacity duration-700
   };
 
   return (

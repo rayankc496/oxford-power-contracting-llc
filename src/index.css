@@ -40,3 +40,18 @@ html {
   height: 1px;
   background-color: #d4a843;
 }
+
+/* Shimmer text effect */
+.shine {
+  background: linear-gradient(90deg, #d4a843, #fff, #d4a843);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+  100% { background-position: 0% center; }
+}
