@@ -5,17 +5,21 @@ interface AnimatedCounterProps {
   suffix?: string;
   prefix?: string;
   duration?: number;
+  decimals?: number;
   className?: string;
   startWhen?: boolean;
+  delay?: number;
 }
 
 export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
   end,
   suffix = '',
   prefix = '',
-  duration = 2200,
+  duration = 2000,
+  decimals = 0,
   className = '',
   startWhen = true,
+  delay = 500,
 }) => {
   const [count, setCount] = useState(0);
   const [isInView, setIsInView] = useState(false);
@@ -34,7 +38,10 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { 
+        threshold: 0.15,
+        rootMargin: '0px 0px -20px 0px' 
+      }
     );
 
     observer.observe(node);
@@ -42,42 +49,49 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
   }, [startWhen]);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || !startWhen) return;
 
-    const startTime = performance.now();
+    let animationFrameId: number;
+    let timerId: ReturnType<typeof setTimeout>;
 
-    const animate = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
+    timerId = setTimeout(() => {
+      const startTime = performance.now();
 
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.floor(eased * end);
+      const animate = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
 
-      setCount(current);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = eased * end;
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        setCount(end);
-      }
+        setCount(current);
+
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(animate);
+        } else {
+          setCount(end);
+        }
+      };
+
+      animationFrameId = requestAnimationFrame(animate);
+    }, delay);
+
+    return () => {
+      clearTimeout(timerId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
-
-    requestAnimationFrame(animate);
-  }, [isInView, end, duration]);
+  }, [isInView, startWhen, end, duration, delay]);
 
   const formatNumber = (num: number) => {
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    if (decimals > 0) {
+      return num.toFixed(decimals);
     }
-    if (num >= 1000) {
-      return num.toLocaleString();
-    }
-    return num.toString();
+    return Math.floor(num).toLocaleString();
   };
 
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={`tabular-nums ${className}`}>
       {prefix}{formatNumber(count)}{suffix}
     </span>
   );

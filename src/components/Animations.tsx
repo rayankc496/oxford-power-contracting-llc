@@ -207,9 +207,8 @@ export const ScrollProgress: React.FC = () => {
   return (
     <motion.div
       className="fixed top-0 left-0 h-[3px] z-[9999] pointer-events-none"
-      style={{ background: 'linear-gradient(90deg, #d4a843, #c49833)' }}
+      style={{ background: 'linear-gradient(90deg, #d4a843, #c49833)', transformOrigin: 'left center' }}
       animate={{ scaleX: progress }}
-      style={{ transformOrigin: 'left center' }}
       initial={{ scaleX: 0 }}
     />
   );

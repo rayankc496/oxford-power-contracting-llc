@@ -4,6 +4,7 @@ import { PageRoute } from '../types';
 import { COMPANY_INFO } from '../data/companyData';
 import { ArrowRight, Phone, ShieldCheck } from 'lucide-react';
 import { AnimatedCounter } from '../components/AnimatedCounter';
+import { FloatingShapes } from '../components/Animations';
 
 interface ScrollVideoHeaderProps {
   onNavigate?: (page: PageRoute) => void;
@@ -14,7 +15,7 @@ interface ScrollVideoHeaderProps {
 export const ScrollVideoHeader: React.FC<ScrollVideoHeaderProps> = ({
   onNavigate,
   onOpenQuoteModal,
-  isIntroComplete,
+  isIntroComplete = false,
 }) => {
   const [line1, setLine1] = useState('');
   const [line2, setLine2] = useState('');
@@ -131,14 +132,18 @@ export const ScrollVideoHeader: React.FC<ScrollVideoHeaderProps> = ({
         }}
       />
 
+      {/* Subtle Floating Shapes for Alive Dynamic Vibe */}
+      <FloatingShapes className="opacity-40" />
+
       {/* Hero Content Container */}
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-24 sm:py-32 w-full flex flex-col justify-center"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-20 sm:py-28 w-full flex flex-col justify-center"
         initial={{ opacity: 0, y: 36, filter: 'blur(6px)' }}
         animate={isIntroComplete ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 36, filter: 'blur(6px)' }}
         transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         data-testid="hero-content"
       >
+        {/* Main Headline & CTAs Box (max-w-3xl) */}
         <div className="max-w-3xl space-y-6">
           {/* Accreditation Tag & Location */}
           <div className="space-y-1.5">
@@ -189,25 +194,61 @@ export const ScrollVideoHeader: React.FC<ScrollVideoHeaderProps> = ({
               Explore Portfolio
             </button>
           </div>
+        </div>
 
-          {/* Trust Metrics Bar */}
-          <div className="pt-8 sm:pt-12 border-t border-zinc-800/80 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-            <div className="space-y-1">
-              <AnimatedCounter end={20} suffix="+" duration={2000} className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-none tracking-tight text-white block" />
-              <span className="text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider font-sans block">Years in the UAE</span>
-            </div>
-            <div className="space-y-1">
-              <AnimatedCounter end={450} suffix="+" duration={2200} className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-none tracking-tight text-[#d4a843] block" />
-              <span className="text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider font-sans block">Completed Projects</span>
-            </div>
-            <div className="space-y-1">
-              <AnimatedCounter end={1200000} suffix="+" duration={2500} className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-none tracking-tight text-white block" />
-              <span className="text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider font-sans block">Safe Man-Hours</span>
-            </div>
-            <div className="space-y-1">
-              <AnimatedCounter end={100} suffix="%" duration={1800} className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-none tracking-tight text-[#d4a843] block" />
-              <span className="text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider font-sans block">DEWA Compliant</span>
-            </div>
+        {/* Full-Width Evenly Spaced Trust Metrics Bar across full max-w-7xl */}
+        <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-zinc-800/80 w-full grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-start justify-between">
+          <div className="space-y-1">
+            <AnimatedCounter
+              end={20}
+              suffix="+"
+              duration={1800}
+              startWhen={isIntroComplete}
+              className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-none tracking-tight text-white block tabular-nums"
+            />
+            <span className="text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider font-sans block mt-1">
+              Years in the UAE
+            </span>
+          </div>
+
+          <div className="space-y-1">
+            <AnimatedCounter
+              end={450}
+              suffix="+"
+              duration={2000}
+              startWhen={isIntroComplete}
+              className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-none tracking-tight text-[#d4a843] block tabular-nums"
+            />
+            <span className="text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider font-sans block mt-1">
+              Completed Projects
+            </span>
+          </div>
+
+          <div className="space-y-1">
+            <AnimatedCounter
+              end={1.2}
+              decimals={1}
+              suffix="M+"
+              duration={2200}
+              startWhen={isIntroComplete}
+              className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-none tracking-tight text-white block tabular-nums"
+            />
+            <span className="text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider font-sans block mt-1">
+              Safe Man-Hours
+            </span>
+          </div>
+
+          <div className="space-y-1">
+            <AnimatedCounter
+              end={100}
+              suffix="%"
+              duration={1600}
+              startWhen={isIntroComplete}
+              className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-none tracking-tight text-[#d4a843] block tabular-nums"
+            />
+            <span className="text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider font-sans block mt-1">
+              DEWA Compliant
+            </span>
           </div>
         </div>
       </motion.div>
