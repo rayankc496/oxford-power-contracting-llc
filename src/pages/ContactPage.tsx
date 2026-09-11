@@ -19,9 +19,10 @@ import { WhatsAppIcon } from '../components/WhatsAppIcon';
 
 interface ContactPageProps {
   onShowToast: (msg: string) => void;
+  isIntroComplete: boolean;
 }
 
-export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast }) => {
+export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast, isIntroComplete }) => {
   const [formData, setFormData] = useState<ContactFormData>({
     fullName: '',
     companyName: '',
@@ -119,6 +120,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast }) => {
     }
   };
 
+  const headingRevealVariant = {
+    hidden: { opacity: 0, y: 28, filter: 'blur(4px)' },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      filter: 'blur(0px)',
+      transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] } 
+    }
+  };
+
   return (
     <div className="pt-24 sm:pt-28 pb-20 space-y-16">
       <Helmet>
@@ -131,9 +142,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast }) => {
       <section className="bg-gray-50 border-b border-gray-200 py-16 sm:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <motion.div 
-            variants={fadeRightVariant}
-            initial="hidden"
-            whileInView="visible"
+            variants={headingRevealVariant}
+            initial={isIntroComplete ? "hidden" : "visible"}
+            whileInView={isIntroComplete ? "visible" : undefined}
             viewport={{ once: true, amount: 0.15 }}
             className="max-w-3xl space-y-4"
           >

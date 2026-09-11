@@ -26,11 +26,13 @@ import {
 interface ServicesPageProps {
   onNavigate: (page: PageRoute) => void;
   onOpenQuoteModal: (service?: string) => void;
+  isIntroComplete: boolean;
 }
 
 export const ServicesPage: React.FC<ServicesPageProps> = ({
   onNavigate,
   onOpenQuoteModal,
+  isIntroComplete,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedServiceDetail, setSelectedServiceDetail] = useState<ServiceItem | null>(null);
@@ -141,10 +143,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
       {/* 1. Geometric Services Header */}
       <section className="bg-gray-50 border-b border-gray-200 py-16 sm:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <motion.div 
+          <motion.div
             variants={headingRevealVariant}
-            initial="hidden"
-            whileInView="visible"
+            initial={isIntroComplete ? "hidden" : "visible"}
+            whileInView={isIntroComplete ? "visible" : undefined}
             viewport={{ once: true, amount: 0.15 }}
             className="max-w-3xl space-y-4"
           >

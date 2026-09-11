@@ -20,12 +20,14 @@ interface ProjectsPageProps {
   onNavigate: (page: PageRoute) => void;
   onOpenLightbox: (project: ProjectItem) => void;
   onOpenQuoteModal: () => void;
+  isIntroComplete: boolean;
 }
 
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({
   onNavigate,
   onOpenLightbox,
   onOpenQuoteModal,
+  isIntroComplete,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
@@ -105,8 +107,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <motion.div 
             variants={headingRevealVariant}
-            initial="hidden"
-            whileInView="visible"
+            initial={isIntroComplete ? "hidden" : "visible"}
+            whileInView={isIntroComplete ? "visible" : undefined}
             viewport={{ once: true, amount: 0.15 }}
             className="max-w-3xl space-y-4"
           >
@@ -170,7 +172,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
             <div className="space-y-4">
               <div className="relative h-64 sm:h-72 overflow-hidden bg-zinc-900 border border-gray-200">
                 <SafeImage
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
+                  src="https://d3ob0s3rxbjyep.cloudfront.net/content/Business_Tower_20210123_1_eac08d6967_2b5f51d361.jpg?q=80&w=1200&auto=format&fit=crop"
                   alt="Handover and Full DEWA Energization"
                   className="w-full h-full object-cover"
                 />

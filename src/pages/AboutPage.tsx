@@ -21,9 +21,10 @@ import {
 interface AboutPageProps {
   onNavigate: (page: PageRoute) => void;
   onOpenQuoteModal: () => void;
+  isIntroComplete: boolean;
 }
 
-export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteModal }) => {
+export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteModal, isIntroComplete }) => {
   const milestones = [
     {
       year: '2006',
@@ -119,8 +120,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <motion.div 
               variants={headingRevealVariant}
-              initial="hidden"
-              whileInView="visible"
+              initial={isIntroComplete ? "hidden" : "visible"}
+              whileInView={isIntroComplete ? "visible" : undefined}
               viewport={{ once: true, amount: 0.15 }}
               className="max-w-3xl space-y-4"
             >

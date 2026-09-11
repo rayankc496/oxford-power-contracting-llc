@@ -262,7 +262,7 @@ export const PROJECTS: ProjectItem[] = [
     areaSqFt: '285,000 sq.ft',
     featured: true,
     dewaApproved: true,
-    heroImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop',
+    heroImage: 'https://d3ob0s3rxbjyep.cloudfront.net/content/Business_Tower_20210123_1_eac08d6967_2b5f51d361.jpg?q=80&w=1200&auto=format&fit=crop',
     gallery: [
       'https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=1200&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop',

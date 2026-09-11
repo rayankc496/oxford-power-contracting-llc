@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import { PageRoute, ProjectItem } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -82,6 +83,7 @@ export default function App() {
           <AboutPage
             onNavigate={navigateTo}
             onOpenQuoteModal={() => handleOpenQuoteModal()}
+            isIntroComplete={isIntroComplete}
           />
         );
       case 'services':
@@ -89,6 +91,7 @@ export default function App() {
           <ServicesPage
             onNavigate={navigateTo}
             onOpenQuoteModal={handleOpenQuoteModal}
+            isIntroComplete={isIntroComplete}
           />
         );
       case 'projects':
@@ -97,12 +100,14 @@ export default function App() {
             onNavigate={navigateTo}
             onOpenLightbox={handleOpenLightbox}
             onOpenQuoteModal={() => handleOpenQuoteModal()}
+            isIntroComplete={isIntroComplete}
           />
         );
       case 'contact':
         return (
           <ContactPage
             onShowToast={(msg) => setToastMessage(msg)}
+            isIntroComplete={isIntroComplete}
           />
         );
       default:
