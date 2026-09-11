@@ -15,7 +15,6 @@ export const SafeImage: React.FC<SafeImageProps> = ({
   ...props 
 }) => {
   const [hasError, setHasError] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   if (hasError) {
     if (fallbackSrc) {
@@ -28,7 +27,6 @@ export const SafeImage: React.FC<SafeImageProps> = ({
           referrerPolicy="no-referrer"
           loading={priority ? "eager" : "lazy"}
           fetchPriority={priority ? "high" : "low"}
-          onLoad={() => setIsLoaded(true)}
         />
       );
     }
@@ -45,12 +43,11 @@ export const SafeImage: React.FC<SafeImageProps> = ({
       {...props}
       src={src}
       alt={alt}
-      className={`${className || ''} transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+      className={className}
       referrerPolicy="no-referrer"
       loading={priority ? "eager" : "lazy"}
       fetchPriority={priority ? "high" : "low"}
       onError={() => setHasError(true)}
-      onLoad={() => setIsLoaded(true)}
     />
   );
 };

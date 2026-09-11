@@ -92,6 +92,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
             src={images[currentIndex]}
             alt={`${project.title} - View ${currentIndex + 1}`}
             className="max-h-full max-w-full object-contain select-none"
+            priority
           />
 
           {images.length > 1 && (

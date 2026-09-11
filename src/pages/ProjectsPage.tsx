@@ -82,6 +82,16 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
     }
   };
 
+  const headingRevealVariant = {
+    hidden: { opacity: 0, y: 28, filter: 'blur(4px)' },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      filter: 'blur(0px)',
+      transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] } 
+    }
+  };
+
   return (
     <div className="pt-24 sm:pt-28 pb-20 space-y-20">
       <Helmet>
@@ -94,7 +104,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
       <section className="bg-gray-50 border-b border-gray-200 py-16 sm:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <motion.div 
-            variants={fadeRightVariant}
+            variants={headingRevealVariant}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}

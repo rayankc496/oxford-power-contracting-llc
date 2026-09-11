@@ -94,6 +94,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
     }
   };
 
+  const headingRevealVariant = {
+    hidden: { opacity: 0, y: 28, filter: 'blur(4px)' },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      filter: 'blur(0px)',
+      transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] } 
+    }
+  };
+
 
   return (
     <div className="pt-24 sm:pt-28 pb-20 space-y-20">
@@ -108,7 +118,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <motion.div 
-              variants={fadeRightVariant}
+              variants={headingRevealVariant}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
