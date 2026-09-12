@@ -48,10 +48,10 @@ export default function App() {
   }, []);
 
   const navigateTo = (page: PageRoute) => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setCurrentPage(page);
     const newUrl = page === 'home' ? window.location.pathname : `?page=${page}`;
     window.history.pushState({ page }, '', newUrl);
-    window.scrollTo(0, 0);
   };
 
   const handleOpenQuoteModal = (service?: string) => {
@@ -128,7 +128,17 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1">
-        {renderPage()}
+        <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' })}>
+          <motion.div
+            key={currentPage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            {renderPage()}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       {/* Sticky Quick Contact / Quote Trigger */}

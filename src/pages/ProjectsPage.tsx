@@ -141,9 +141,9 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-8 overflow-hidden">
         <motion.div 
           variants={fadeUpVariant}
-          initial={isIntroComplete ? "hidden" : "visible"}
-          whileInView={isIntroComplete ? "visible" : undefined}
-          viewport={{ once: true, amount: 0.15 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.15 }}
           className="bg-white border border-gray-200 p-8 sm:p-10 shadow-sm"
         >
           <div className="max-w-3xl mb-8 space-y-2">
@@ -205,9 +205,9 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <motion.div 
           variants={fadeUpVariant}
-          initial={isIntroComplete ? "hidden" : "visible"}
-          whileInView={isIntroComplete ? "visible" : undefined}
-          viewport={{ once: true, amount: 0.15 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.15 }}
           className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 pb-4 border-b border-gray-200"
         >
           <div className="flex flex-wrap items-center gap-2">
@@ -238,10 +238,10 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
             <motion.div
               key={project.id}
               variants={scaleUpVariant}
-              initial={isIntroComplete ? "hidden" : "visible"}
-              whileInView={isIntroComplete ? "visible" : undefined}
+              initial="hidden"
+              whileInView="visible"
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              viewport={{ once: true, amount: 0.15 }}
+              viewport={{ amount: 0.15 }}
               transition={{ delay: index * 0.15 }}
               className="bg-white border border-gray-200 hover:border-[#d4a843] shadow-sm transition-all flex flex-col justify-between group relative"
             >
@@ -323,9 +323,9 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <motion.div 
           variants={fadeUpVariant}
-          initial={isIntroComplete ? "hidden" : "visible"}
-          whileInView={isIntroComplete ? "visible" : undefined}
-          viewport={{ once: true, amount: 0.15 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.15 }}
           className="bg-[#333333] text-white p-8 sm:p-14 border border-zinc-700 shadow-xl"
         >
           <div className="w-12 h-1 bg-[#d4a843] mb-4"></div>

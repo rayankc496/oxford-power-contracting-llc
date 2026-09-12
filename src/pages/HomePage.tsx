@@ -138,7 +138,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             variants={fadeRightVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ amount: 0.15 }}
             className="lg:col-span-7 space-y-6"
           >
             <div>
@@ -198,7 +198,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             variants={fadeLeftVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ amount: 0.15 }}
             className="lg:col-span-5 relative"
           >
             <div className="relative border border-gray-200 overflow-hidden shadow-sm bg-zinc-900 aspect-[4/3] sm:aspect-[5/4]">
@@ -234,7 +234,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             variants={fadeUpVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ amount: 0.15 }}
             className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6"
           >
             <div className="max-w-2xl space-y-3">
@@ -269,7 +269,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               initial="hidden"
               whileInView="visible"
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              viewport={{ once: true, amount: 0.15 }}
+              viewport={{ amount: 0.15 }}
               transition={{ delay: index * 0.12 }}
               className="group bg-[#fafafa] border border-gray-200 hover:border-[#d4a843] transition-all flex flex-col justify-between shadow-sm relative"
               >
@@ -376,7 +376,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               initial="hidden"
               whileInView="visible"
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              viewport={{ once: true, amount: 0.15 }}
+              viewport={{ amount: 0.15 }}
               transition={{ delay: index * 0.15 }}
               className="group bg-white border border-gray-200 hover:border-[#d4a843] transition-all shadow-sm relative"
             >
@@ -467,7 +467,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 variants={fadeUpVariant}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.15 }}
+                viewport={{ amount: 0.15 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.15 }}
                 className="bg-[#fafafa] border border-gray-200 p-8 flex flex-col justify-between space-y-6"
               >

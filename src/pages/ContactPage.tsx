@@ -181,7 +181,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast, isIntroCo
             variants={fadeRightVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ amount: 0.15 }}
             className="lg:col-span-5 space-y-6"
           >
             <div className="bg-white p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
@@ -324,7 +324,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast, isIntroCo
             variants={fadeLeftVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ amount: 0.15 }}
             className="lg:col-span-7"
           >
             <div className="bg-white p-6 sm:p-10 border border-gray-200 shadow-sm">
@@ -551,7 +551,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast, isIntroCo
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ amount: 0.15 }}
           className="bg-white border border-gray-200 shadow-sm"
         >
           <div className="p-6 bg-gray-50 border-b border-gray-200 flex flex-wrap items-center justify-between gap-4">

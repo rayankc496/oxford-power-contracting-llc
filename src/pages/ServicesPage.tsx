@@ -182,7 +182,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ amount: 0.15 }}
           className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-gray-200"
         >
           <span className="text-[10px] uppercase font-bold tracking-widest text-gray-400 mr-2">Filter Sector:</span>
@@ -210,7 +210,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               initial="hidden"
               whileInView="visible"
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              viewport={{ once: true, amount: 0.15 }}
+              viewport={{ amount: 0.15 }}
               transition={{ delay: index * 0.12 }}
               className="bg-white border border-gray-200 hover:border-[#d4a843] transition-all flex flex-col justify-between shadow-sm group relative"
             >
@@ -289,7 +289,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ amount: 0.15 }}
           className="bg-white border border-gray-200 p-8 sm:p-12 shadow-sm"
         >
           <div className="max-w-3xl mb-8">

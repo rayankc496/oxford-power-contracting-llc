@@ -171,9 +171,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
 
             <motion.div 
               variants={fadeLeftVariant}
-              initial={isIntroComplete ? "hidden" : "visible"}
-              whileInView={isIntroComplete ? "visible" : undefined}
-              viewport={{ once: true, amount: 0.15 }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.15 }}
               className="shrink-0 flex items-center justify-center"
             >
               <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden flex items-center justify-center">
@@ -194,9 +194,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <motion.div 
             variants={fadeRightVariant}
-            initial={isIntroComplete ? "hidden" : "visible"}
-            whileInView={isIntroComplete ? "visible" : undefined}
-            viewport={{ once: true, amount: 0.15 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.15 }}
             className="lg:col-span-7 space-y-6"
           >
             <div className="border-l-4 border-[#d4a843] pl-6 py-2 bg-gray-50">
@@ -239,9 +239,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
 
           <motion.div 
             variants={fadeLeftVariant}
-            initial={isIntroComplete ? "hidden" : "visible"}
-            whileInView={isIntroComplete ? "visible" : undefined}
-            viewport={{ once: true, amount: 0.15 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.15 }}
             className="lg:col-span-5 relative"
           >
             <div className="overflow-hidden border border-gray-200 shadow-lg bg-zinc-900">
@@ -269,9 +269,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <motion.div 
             variants={fadeUpVariant}
-            initial={isIntroComplete ? "hidden" : "visible"}
-            whileInView={isIntroComplete ? "visible" : undefined}
-            viewport={{ once: true, amount: 0.15 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.15 }}
             className="max-w-2xl mb-12"
           >
             <div className="w-12 h-1 bg-[#d4a843] mb-3"></div>
@@ -290,7 +290,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
             variants={timelineContainerVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.7 }}
+            viewport={{ amount: 0.7 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {milestones.map((item, idx) => (
@@ -321,7 +321,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ amount: 0.15 }}
           className="max-w-3xl mb-12"
         >
           <div className="w-12 h-1 bg-[#d4a843] mb-3"></div>
@@ -340,7 +340,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           variants={scaleUpVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ amount: 0.15 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {CERTIFICATIONS.map((cert, index) => (
@@ -349,7 +349,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
               variants={scaleUpVariant}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
+              viewport={{ amount: 0.15 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.15 }}
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
               className="bg-white p-6 border border-gray-200 shadow-sm hover:border-[#d4a843] transition-all flex flex-col justify-between"
@@ -389,7 +389,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ amount: 0.15 }}
           className="max-w-3xl mb-12"
         >
           <div className="w-12 h-1 bg-[#d4a843] mb-3"></div>
@@ -411,7 +411,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
               variants={scaleUpVariant}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
+              viewport={{ amount: 0.15 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.15 }}
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
               className="bg-white border border-gray-200 shadow-sm hover:border-[#d4a843] transition-all group"
@@ -455,7 +455,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           variants={fadeUpVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ amount: 0.15 }}
           className="bg-[#333333] text-white p-8 sm:p-14 border border-zinc-700 shadow-xl"
         >
           <div className="w-12 h-1 bg-[#d4a843] mb-4"></div>
