@@ -298,21 +298,20 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           </motion.div>
 
           <motion.div 
-            variants={isMobile ? undefined : timelineContainerVariant}
-            initial={isMobile ? undefined : "hidden"}
-            whileInView={isMobile ? undefined : "visible"}
-            viewport={isMobile ? undefined : { amount: 0.15 }}
+            initial={isMobile ? "hidden" : "hidden"}
+            whileInView={isMobile ? "visible" : "visible"}
+            viewport={isMobile ? { amount: 0.2, once: false } : { amount: 0.15 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {milestones.map((item, idx) => (
               <motion.div
                 key={idx}
-                variants={timelineCardVariant}
+                variants={isMobile ? timelineCardVariant : timelineCardVariant}
                 initial={isMobile ? "hidden" : undefined}
                 whileInView={isMobile ? "visible" : undefined}
-                viewport={isMobile ? { amount: 0.25, margin: "0px 0px -40px 0px" } : undefined}
+                viewport={isMobile ? { amount: 0.25, once: false, margin: "0px 0px -40px 0px" } : undefined}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                className="bg-white p-6 border border-gray-200 shadow-sm relative hover:border-[#d4a843] transition-colors"
+                className="bg-white p-6 border border-gray-200 shadow-sm relative hover:border-[#d4a843] transition-colors will-change-transform"
               >
                 <div className="font-heading text-4xl font-bold text-[#d4a843] mb-2 leading-none">
                   {item.year}

@@ -8,11 +8,19 @@
   --color-gray-border: #e5e7eb;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: #ffffff;
   color: #333333;
+  overflow-x: hidden;
+}
+
+/* Hardware acceleration helper for smooth scroll performance */
+.will-change-transform {
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 .font-heading {
