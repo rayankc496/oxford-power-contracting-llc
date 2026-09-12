@@ -120,14 +120,26 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast, isIntroCo
     }
   };
 
-  const headingRevealVariant = {
-    hidden: { opacity: 0, y: 32, filter: 'blur(8px)' },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+  const vibrantHeaderContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.05,
+      },
+    },
+  };
+
+  const vibrantHeaderItem = {
+    hidden: { opacity: 0, y: 35, scale: 0.95, filter: 'blur(8px)' },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
       filter: 'blur(0px)',
-      transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.1 } 
-    }
+      transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+    },
   };
 
   return (
@@ -142,21 +154,21 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast, isIntroCo
       <section className="bg-gray-50 border-b border-gray-200 py-16 sm:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <motion.div 
-            variants={headingRevealVariant}
+            variants={vibrantHeaderContainer}
             initial="hidden"
             animate="visible"
             className="max-w-3xl space-y-4"
           >
-            <div className="w-20 h-1 bg-[#d4a843] mb-6"></div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#d4a843] block">
+            <motion.div variants={vibrantHeaderItem} className="w-20 h-1 bg-[#d4a843] mb-6" />
+            <motion.span variants={vibrantHeaderItem} className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#d4a843] block">
               Sharjah Headquarters • UAE
-            </span>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-[#333333]">
+            </motion.span>
+            <motion.h1 variants={vibrantHeaderItem} className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-[#333333]">
               Contact & <span className="text-[#d4a843]">Tendering Desk</span>
-            </h1>
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-sans">
+            </motion.h1>
+            <motion.p variants={vibrantHeaderItem} className="text-gray-600 text-base sm:text-lg leading-relaxed font-sans">
               Connect directly with our senior estimators, civil engineers, and DEWA regulatory liaison officers. We are available for site meetings, tender submissions, and feasibility reviews.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </section>

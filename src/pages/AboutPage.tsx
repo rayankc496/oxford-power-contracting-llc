@@ -95,14 +95,47 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
     }
   };
 
-  const headingRevealVariant = {
-    hidden: { opacity: 0, y: 32, filter: 'blur(8px)' },
+  const timelineContainerVariant = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.22,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const timelineCardVariant = {
+    hidden: { opacity: 0, y: 40, scale: 0.93, filter: 'blur(8px)' },
     visible: { 
       opacity: 1, 
       y: 0, 
+      scale: 1,
       filter: 'blur(0px)',
-      transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.1 } 
+      transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } 
     }
+  };
+
+  const vibrantHeaderContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.05,
+      },
+    },
+  };
+
+  const vibrantHeaderItem = {
+    hidden: { opacity: 0, y: 35, scale: 0.95, filter: 'blur(8px)' },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: 'blur(0px)',
+      transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+    },
   };
 
 
@@ -119,21 +152,21 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <motion.div 
-              variants={headingRevealVariant}
+              variants={vibrantHeaderContainer}
               initial="hidden"
               animate="visible"
               className="max-w-3xl space-y-4"
             >
-              <div className="w-20 h-1 bg-[#d4a843] mb-6"></div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#d4a843] block">
+              <motion.div variants={vibrantHeaderItem} className="w-20 h-1 bg-[#d4a843] mb-6" />
+              <motion.span variants={vibrantHeaderItem} className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#d4a843] block">
                 Corporate Heritage • Est. 2006
-              </span>
-              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-[#333333]">
+              </motion.span>
+              <motion.h1 variants={vibrantHeaderItem} className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-[#333333]">
                 About Oxford Power <span className="text-[#d4a843]">Contracting</span>
-              </h1>
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-sans">
+              </motion.h1>
+              <motion.p variants={vibrantHeaderItem} className="text-gray-600 text-base sm:text-lg leading-relaxed font-sans">
                 Founded in 2006, Oxford Power Contracting LLC (operating as Oxford Building Contracting) has delivered landmark civil engineering, MEP infrastructure, and high-spec architectural projects across the United Arab Emirates.
-              </p>
+              </motion.p>
             </motion.div>
 
             <motion.div 
@@ -254,20 +287,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           </motion.div>
 
           <motion.div 
-            variants={scaleUpVariant}
-            initial={isIntroComplete ? "hidden" : "visible"}
-            whileInView={isIntroComplete ? "visible" : undefined}
-            viewport={{ once: true, amount: 0.15 }}
+            variants={timelineContainerVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.7 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {milestones.map((item, idx) => (
               <motion.div
                 key={idx}
-                variants={scaleUpVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.15 }}
+                variants={timelineCardVariant}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className="bg-white p-6 border border-gray-200 shadow-sm relative hover:border-[#d4a843] transition-colors"
               >

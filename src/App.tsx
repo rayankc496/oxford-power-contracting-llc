@@ -51,7 +51,7 @@ export default function App() {
     setCurrentPage(page);
     const newUrl = page === 'home' ? window.location.pathname : `?page=${page}`;
     window.history.pushState({ page }, '', newUrl);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   };
 
   const handleOpenQuoteModal = (service?: string) => {
