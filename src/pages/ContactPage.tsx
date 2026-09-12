@@ -121,12 +121,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast, isIntroCo
   };
 
   const headingRevealVariant = {
-    hidden: { opacity: 0, y: 28, filter: 'blur(4px)' },
+    hidden: { opacity: 0, y: 32, filter: 'blur(8px)' },
     visible: { 
       opacity: 1, 
       y: 0, 
       filter: 'blur(0px)',
-      transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] } 
+      transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.1 } 
     }
   };
 
@@ -143,9 +143,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onShowToast, isIntroCo
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <motion.div 
             variants={headingRevealVariant}
-            initial={isIntroComplete ? "hidden" : "visible"}
-            whileInView={isIntroComplete ? "visible" : undefined}
-            viewport={{ once: true, amount: 0.15 }}
+            initial="hidden"
+            animate="visible"
             className="max-w-3xl space-y-4"
           >
             <div className="w-20 h-1 bg-[#d4a843] mb-6"></div>

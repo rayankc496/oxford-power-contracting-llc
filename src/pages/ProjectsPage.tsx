@@ -85,12 +85,12 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
   };
 
   const headingRevealVariant = {
-    hidden: { opacity: 0, y: 28, filter: 'blur(4px)' },
+    hidden: { opacity: 0, y: 32, filter: 'blur(8px)' },
     visible: { 
       opacity: 1, 
       y: 0, 
       filter: 'blur(0px)',
-      transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] } 
+      transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.1 } 
     }
   };
 
@@ -107,9 +107,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <motion.div 
             variants={headingRevealVariant}
-            initial={isIntroComplete ? "hidden" : "visible"}
-            whileInView={isIntroComplete ? "visible" : undefined}
-            viewport={{ once: true, amount: 0.15 }}
+            initial="hidden"
+            animate="visible"
             className="max-w-3xl space-y-4"
           >
             <div className="w-20 h-1 bg-[#d4a843] mb-6"></div>
@@ -130,8 +129,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-8 overflow-hidden">
         <motion.div 
           variants={fadeUpVariant}
-          initial="hidden"
-          whileInView="visible"
+          initial={isIntroComplete ? "hidden" : "visible"}
+          whileInView={isIntroComplete ? "visible" : undefined}
           viewport={{ once: true, amount: 0.15 }}
           className="bg-white border border-gray-200 p-8 sm:p-10 shadow-sm"
         >
@@ -153,8 +152,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
             <div className="space-y-4">
               <div className="relative h-64 sm:h-72 overflow-hidden bg-zinc-900 border border-gray-200">
                 <SafeImage
-                  src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?q=80&w=1200&auto=format&fit=crop"
-                  alt="Excavation and Substructure Piling"
+                  src="https://d3ob0s3rxbjyep.cloudfront.net/content/Business_Tower_20210123_1_eac08d6967_2b5f51d361.jpg?q=80&w=1200&auto=format&fit=crop"
+                  alt="Al Majaz Waterfront Commercial Tower - Substructure & Deep Foundation"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -194,8 +193,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <motion.div 
           variants={fadeUpVariant}
-          initial="hidden"
-          whileInView="visible"
+          initial={isIntroComplete ? "hidden" : "visible"}
+          whileInView={isIntroComplete ? "visible" : undefined}
           viewport={{ once: true, amount: 0.15 }}
           className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 pb-4 border-b border-gray-200"
         >
@@ -227,8 +226,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
             <motion.div
               key={project.id}
               variants={scaleUpVariant}
-              initial="hidden"
-              whileInView="visible"
+              initial={isIntroComplete ? "hidden" : "visible"}
+              whileInView={isIntroComplete ? "visible" : undefined}
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ delay: index * 0.15 }}
@@ -312,8 +311,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <motion.div 
           variants={fadeUpVariant}
-          initial="hidden"
-          whileInView="visible"
+          initial={isIntroComplete ? "hidden" : "visible"}
+          whileInView={isIntroComplete ? "visible" : undefined}
           viewport={{ once: true, amount: 0.15 }}
           className="bg-[#333333] text-white p-8 sm:p-14 border border-zinc-700 shadow-xl"
         >

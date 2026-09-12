@@ -264,7 +264,7 @@ export const PROJECTS: ProjectItem[] = [
     dewaApproved: true,
     heroImage: 'https://d3ob0s3rxbjyep.cloudfront.net/content/Business_Tower_20210123_1_eac08d6967_2b5f51d361.jpg?q=80&w=1200&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1200&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop',
     ],

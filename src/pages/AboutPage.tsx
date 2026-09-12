@@ -96,12 +96,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
   };
 
   const headingRevealVariant = {
-    hidden: { opacity: 0, y: 28, filter: 'blur(4px)' },
+    hidden: { opacity: 0, y: 32, filter: 'blur(8px)' },
     visible: { 
       opacity: 1, 
       y: 0, 
       filter: 'blur(0px)',
-      transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] } 
+      transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.1 } 
     }
   };
 
@@ -120,9 +120,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <motion.div 
               variants={headingRevealVariant}
-              initial={isIntroComplete ? "hidden" : "visible"}
-              whileInView={isIntroComplete ? "visible" : undefined}
-              viewport={{ once: true, amount: 0.15 }}
+              initial="hidden"
+              animate="visible"
               className="max-w-3xl space-y-4"
             >
               <div className="w-20 h-1 bg-[#d4a843] mb-6"></div>
@@ -139,8 +138,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
 
             <motion.div 
               variants={fadeLeftVariant}
-              initial="hidden"
-              whileInView="visible"
+              initial={isIntroComplete ? "hidden" : "visible"}
+              whileInView={isIntroComplete ? "visible" : undefined}
               viewport={{ once: true, amount: 0.15 }}
               className="shrink-0 flex items-center justify-center"
             >
@@ -162,8 +161,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <motion.div 
             variants={fadeRightVariant}
-            initial="hidden"
-            whileInView="visible"
+            initial={isIntroComplete ? "hidden" : "visible"}
+            whileInView={isIntroComplete ? "visible" : undefined}
             viewport={{ once: true, amount: 0.15 }}
             className="lg:col-span-7 space-y-6"
           >
@@ -207,8 +206,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
 
           <motion.div 
             variants={fadeLeftVariant}
-            initial="hidden"
-            whileInView="visible"
+            initial={isIntroComplete ? "hidden" : "visible"}
+            whileInView={isIntroComplete ? "visible" : undefined}
             viewport={{ once: true, amount: 0.15 }}
             className="lg:col-span-5 relative"
           >
@@ -237,8 +236,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <motion.div 
             variants={fadeUpVariant}
-            initial="hidden"
-            whileInView="visible"
+            initial={isIntroComplete ? "hidden" : "visible"}
+            whileInView={isIntroComplete ? "visible" : undefined}
             viewport={{ once: true, amount: 0.15 }}
             className="max-w-2xl mb-12"
           >
@@ -256,8 +255,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
 
           <motion.div 
             variants={scaleUpVariant}
-            initial="hidden"
-            whileInView="visible"
+            initial={isIntroComplete ? "hidden" : "visible"}
+            whileInView={isIntroComplete ? "visible" : undefined}
             viewport={{ once: true, amount: 0.15 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
