@@ -403,7 +403,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
               <div className="pt-2">
                 <button
-                  onClick={() => onOpenQuoteModal(`${estimatorService} (${estimatorArea.toLocaleString()} sq.ft in ${estimatorEmirate})`)}
+                  onClick={() => onOpenQuoteModal(`${estimatorService} (${estimatorArea >= 150000 ? '150,000+' : estimatorArea.toLocaleString()} sq.ft in ${estimatorEmirate})`)}
                   className="w-full bg-[#d4a843] hover:bg-[#c49833] text-[#1e1e1e] font-bold py-3.5 px-4 text-xs uppercase tracking-widest transition-all cursor-pointer"
                 >
                   Formalize Quotation For This Scope
