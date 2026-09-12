@@ -119,12 +119,12 @@ export const HomePage: React.FC<HomePageProps> = ({
   };
 
   const swipeTextItemVariant = {
-    hidden: { opacity: 0, x: -60, filter: 'blur(6px)' },
+    hidden: { opacity: 0, x: -80, filter: 'blur(8px)' },
     visible: { 
       opacity: 1, 
       x: 0, 
       filter: 'blur(0px)',
-      transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } 
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } 
     }
   };
 

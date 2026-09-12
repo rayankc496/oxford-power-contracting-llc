@@ -27,6 +27,9 @@ export default function App() {
 
   // Always reset to home page and clean URL on initial page load / refresh
   useEffect(() => {
+    // Force scroll to top immediately on mount/refresh
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    
     // Clear URL params / hash so any refresh lands cleanly on home page
     if (window.location.search || window.location.hash) {
       window.history.replaceState({ page: 'home' }, '', window.location.pathname);

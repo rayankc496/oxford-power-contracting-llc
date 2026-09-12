@@ -107,8 +107,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
   };
 
   const timelineContainerVariant = {
-    hidden: {},
+    hidden: { opacity: 1 },
     visible: {
+      opacity: 1,
       transition: {
         staggerChildren: 0.22,
         delayChildren: 0.1,
@@ -124,6 +125,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
       scale: 1,
       filter: 'blur(0px)',
       transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } 
+    }
+  };
+
+  const mobileTimelineCardVariant = {
+    mobileHidden: { opacity: 0, y: 35, scale: 0.96 },
+    mobileVisible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } 
     }
   };
 
@@ -298,18 +309,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           </motion.div>
 
           <motion.div 
-            initial={isMobile ? "hidden" : "hidden"}
-            whileInView={isMobile ? "visible" : "visible"}
-            viewport={isMobile ? { amount: 0.2, once: false } : { amount: 0.15 }}
+            variants={isMobile ? undefined : timelineContainerVariant}
+            initial={isMobile ? undefined : "hidden"}
+            whileInView={isMobile ? undefined : "visible"}
+            viewport={isMobile ? undefined : { amount: 0.15 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {milestones.map((item, idx) => (
               <motion.div
                 key={idx}
-                variants={isMobile ? timelineCardVariant : timelineCardVariant}
-                initial={isMobile ? "hidden" : undefined}
-                whileInView={isMobile ? "visible" : undefined}
-                viewport={isMobile ? { amount: 0.25, once: false, margin: "0px 0px -40px 0px" } : undefined}
+                variants={isMobile ? mobileTimelineCardVariant : timelineCardVariant}
+                initial={isMobile ? "mobileHidden" : undefined}
+                whileInView={isMobile ? "mobileVisible" : undefined}
+                viewport={isMobile ? { amount: 0.3, once: false, margin: "0px 0px -40px 0px" } : undefined}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className="bg-white p-6 border border-gray-200 shadow-sm relative hover:border-[#d4a843] transition-colors will-change-transform"
               >
