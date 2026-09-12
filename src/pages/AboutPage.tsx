@@ -25,6 +25,17 @@ interface AboutPageProps {
 }
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteModal, isIntroComplete }) => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const milestones = [
     {
       year: '2006',
@@ -287,16 +298,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
           </motion.div>
 
           <motion.div 
-            variants={timelineContainerVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.15 }}
+            variants={isMobile ? undefined : timelineContainerVariant}
+            initial={isMobile ? undefined : "hidden"}
+            whileInView={isMobile ? undefined : "visible"}
+            viewport={isMobile ? undefined : { amount: 0.15 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {milestones.map((item, idx) => (
               <motion.div
                 key={idx}
                 variants={timelineCardVariant}
+                initial={isMobile ? "hidden" : undefined}
+                whileInView={isMobile ? "visible" : undefined}
+                viewport={isMobile ? { amount: 0.25, margin: "0px 0px -40px 0px" } : undefined}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className="bg-white p-6 border border-gray-200 shadow-sm relative hover:border-[#d4a843] transition-colors"
               >

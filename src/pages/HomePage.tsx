@@ -107,6 +107,27 @@ export const HomePage: React.FC<HomePageProps> = ({
     }
   };
 
+  const swipeTextContainerVariant = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1, 
+      transition: { 
+        staggerChildren: 0.08,
+        delayChildren: 0.15 
+      } 
+    }
+  };
+
+  const swipeTextItemVariant = {
+    hidden: { opacity: 0, x: -60, filter: 'blur(6px)' },
+    visible: { 
+      opacity: 1, 
+      x: 0, 
+      filter: 'blur(0px)',
+      transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } 
+    }
+  };
+
   return (
     <div className="space-y-20 sm:space-y-28">
       <Helmet>
@@ -514,9 +535,23 @@ export const HomePage: React.FC<HomePageProps> = ({
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#d4a843] block">
               Direct Tendering & Estimation
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold uppercase leading-tight">
-              Ready to Mobilize Your Next Project in the UAE?
-            </h2>
+            <motion.h2 
+              variants={swipeTextContainerVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.2 }}
+              className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold uppercase leading-tight flex flex-wrap gap-x-3 gap-y-1"
+            >
+              {"Ready to Mobilize Your Next Project in the UAE?".split(" ").map((word, idx) => (
+                <motion.span
+                  key={idx}
+                  variants={swipeTextItemVariant}
+                  className="inline-block"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.h2>
             <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-sans">
               Submit your engineering drawings and BOQ for direct contractor estimation. Our senior civil engineers and DEWA liaison managers are prepared to mobilize.
             </p>

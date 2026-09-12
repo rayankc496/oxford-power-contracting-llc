@@ -25,8 +25,14 @@ export default function App() {
   const [lightboxProject, setLightboxProject] = useState<ProjectItem | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  // Read URL query parameter or hash on mount
+  // Always reset to home page and clean URL on initial page load / refresh
   useEffect(() => {
+    // Clear URL params / hash so any refresh lands cleanly on home page
+    if (window.location.search || window.location.hash) {
+      window.history.replaceState({ page: 'home' }, '', window.location.pathname);
+    }
+    setCurrentPage('home');
+
     const handlePopState = () => {
       const params = new URLSearchParams(window.location.search);
       const pageParam = params.get('page') as PageRoute | null;
@@ -42,7 +48,6 @@ export default function App() {
       }
     };
 
-    handlePopState();
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
