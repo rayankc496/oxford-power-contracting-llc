@@ -8,6 +8,29 @@
   --color-gray-border: #e5e7eb;
 }
 
+html {
+  font-size: 16px;
+}
+
+/* Fluid Desktop / Laptop scaling for optimal legibility across all screen sizes */
+@media (min-width: 1280px) {
+  html {
+    font-size: 17.5px;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 20px;
+  }
+}
+
 html, body {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
