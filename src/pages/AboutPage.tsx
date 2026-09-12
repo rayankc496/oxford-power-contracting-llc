@@ -25,7 +25,12 @@ interface AboutPageProps {
 }
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteModal, isIntroComplete }) => {
-  const [isMobile, setIsMobile] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 768;
+    }
+    return false;
+  });
 
   React.useEffect(() => {
     const checkMobile = () => {
@@ -129,11 +134,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
   };
 
   const mobileTimelineCardVariant = {
-    mobileHidden: { opacity: 0, y: 35, scale: 0.96 },
+    mobileHidden: { opacity: 0, y: 35 },
     mobileVisible: { 
       opacity: 1, 
-      y: 0, 
-      scale: 1,
+      y: 0,
       transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } 
     }
   };
