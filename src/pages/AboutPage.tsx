@@ -290,7 +290,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
             variants={timelineContainerVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.7 }}
+            viewport={{ amount: 0.15 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {milestones.map((item, idx) => (
