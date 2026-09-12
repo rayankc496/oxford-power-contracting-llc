@@ -327,16 +327,16 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-[#333333] mb-2">
                   <span>Built-Up Area:</span>
                   <span className="font-mono text-[#d4a843] font-bold text-sm">
-                    {estimatorArea.toLocaleString()} sq.ft
+                    {estimatorArea >= 150000 ? '150,000+' : estimatorArea.toLocaleString()} sq.ft
                   </span>
                 </div>
                 <input
                   type="range"
                   min={5000}
-                  max={150000}
+                  max={155000}
                   step={5000}
                   value={estimatorArea}
-                  onChange={(e) => setEstimatorArea(Number(e.target.value))}
+                  onChange={(e) => setEstimatorArea(Math.min(Number(e.target.value), 155000))}
                   className="w-full accent-[#d4a843] cursor-pointer"
                 />
                 <div className="flex justify-between text-[11px] text-gray-400 mt-1 font-sans">
