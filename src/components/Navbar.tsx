@@ -57,11 +57,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           ? 'bg-[#222222]/95 backdrop-blur-md shadow-lg py-3 border-b border-zinc-800' 
           : 'bg-[#222222] py-4 border-b border-zinc-800'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center">
           {/* Logo & Brand Identity - Official Company Emblem */}
           <button 
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-3 text-left focus:outline-none group cursor-pointer"
+            className="flex items-center gap-3 text-left focus:outline-none group cursor-pointer shrink-0"
             id="brand-logo-btn"
           >
             {/* Oxford Company Logo */}
@@ -84,8 +84,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </button>
 
-          {/* Desktop Navigation Links with wide uppercase tracking */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs font-semibold uppercase tracking-widest">
+          {/* Desktop Navigation Links - centered in remaining space */}
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs font-semibold uppercase tracking-widest flex-1 justify-center">
             {navLinks.map((link) => {
               const isActive = currentPage === link.id;
               return (
@@ -109,11 +109,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Right Action Buttons - Sharp Rectangular CTA */}
-          <div className="hidden sm:flex items-center space-x-3">
+          <div className="hidden sm:flex items-center space-x-3 shrink-0">
             <button
               onClick={onOpenQuoteModal}
               id="nav-quote-btn"
-              className="ml-[280px] bg-[#333333] text-white border border-zinc-700 hover:border-[#d4a843] hover:bg-[#d4a843] hover:text-[#1e1e1e] font-bold uppercase text-xs tracking-widest px-6 py-3 transition-all flex items-center gap-2"
+              className="bg-[#333333] text-white border border-zinc-700 hover:border-[#d4a843] hover:bg-[#d4a843] hover:text-[#1e1e1e] font-bold uppercase text-xs tracking-widest px-6 py-3 transition-all flex items-center gap-2"
             >
               <span>Get a Quote</span>
               <ChevronRight className="w-3.5 h-3.5" />
