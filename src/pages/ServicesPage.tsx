@@ -350,13 +350,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 <label className="block text-xs font-bold uppercase tracking-wider text-[#333333] mb-2">
                   Project Location / Municipal Jurisdiction:
                 </label>
-                <div className="grid grid-cols-3 gap-3 sm:gap-4">
+                <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                   {['Sharjah', 'Dubai', 'Northern Emirates'].map((em) => (
                     <button
                       key={em}
                       type="button"
                       onClick={() => setEstimatorEmirate(em)}
-                      className={`py-3 px-3 text-xs font-bold uppercase tracking-wider border transition-all cursor-pointer w-full text-center min-w-0 ${
+                      className={`py-3 px-2 xs:px-3 sm:px-4 text-[10px] xs:text-xs sm:text-sm font-bold uppercase tracking-wider border transition-all cursor-pointer w-full text-center min-w-0 whitespace-normal break-words ${
                         estimatorEmirate === em
                           ? 'bg-[#333333] text-[#d4a843] border-[#333333]'
                           : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
