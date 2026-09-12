@@ -27,8 +27,13 @@ export default function App() {
 
   // Always reset to home page and clean URL on initial page load / refresh
   useEffect(() => {
-    // Force scroll to top immediately on mount/refresh
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    // Prevent browser from restoring scroll position on refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    
+    // Force scroll to top immediately on mount/refresh (synchronous, before paint)
+    window.scrollTo(0, 0);
     
     // Clear URL params / hash so any refresh lands cleanly on home page
     if (window.location.search || window.location.hash) {
