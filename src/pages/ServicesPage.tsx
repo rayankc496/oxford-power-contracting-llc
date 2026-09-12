@@ -215,7 +215,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               className="bg-white border border-gray-200 hover:border-[#d4a843] transition-all flex flex-col justify-between shadow-sm group relative"
             >
               <div>
-                <div className="relative h-52 overflow-hidden bg-zinc-900">
+                <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden bg-zinc-900">
                   <SafeImage
                     src={service.image}
                     alt={service.title}

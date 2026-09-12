@@ -445,7 +445,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuoteMod
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
               className="bg-white border border-gray-200 shadow-sm hover:border-[#d4a843] transition-all group"
             >
-              <div className="relative h-64 overflow-hidden bg-zinc-900">
+              <div className="relative h-72 sm:h-80 lg:h-84 overflow-hidden bg-zinc-900">
               <SafeImage
                 src={member.image}
                 alt={member.name}

@@ -296,7 +296,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               >
                 <div>
                   {/* Pillar Image Header */}
-                  <div className="relative h-56 overflow-hidden bg-zinc-900">
+                  <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden bg-zinc-900">
                     <SafeImage
                       src={pillar.image}
                       alt={pillar.title}
@@ -402,7 +402,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               className="group bg-white border border-gray-200 hover:border-[#d4a843] transition-all shadow-sm relative"
             >
               {/* Project Image Frame */}
-              <div className="relative h-72 sm:h-80 overflow-hidden bg-zinc-900">
+              <div className="relative h-80 sm:h-96 lg:h-[420px] overflow-hidden bg-zinc-900">
                 <SafeImage
                   src={project.heroImage}
                   alt={project.title}
