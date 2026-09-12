@@ -121,7 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Mobile Hamburger Button */}
-          <div className="lg:hidden flex items-center space-x-2">
+          <div className="lg:hidden flex items-center space-x-2 ml-auto">
             <button
               onClick={onOpenQuoteModal}
               className="sm:hidden bg-[#333333] border border-[#d4a843] text-[#d4a843] font-bold uppercase text-[10px] tracking-wider px-3 py-1.5"
